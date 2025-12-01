@@ -72,22 +72,6 @@
 - CMake 3.15+
 - Компилятор C++17 (Visual Studio 2022 рекомендуется)
 
-### Сборка проекта:
-
-```bash
-# Клонирование репозитория (если применимо)
-git clone <repository-url>
-cd OS_LAB_4
-
-# Конфигурация проекта
-cmake --preset vs2022-debug
-
-# Сборка
-cmake --build --preset debug-build
-
-# Запуск тестов (опционально)
-ctest --preset test-default
-```
 
 ## Использование
 
@@ -244,50 +228,7 @@ ctest --preset test-default
 3. **Размер файла:** зависит от емкости очереди (capacity × 20 + 16 байт)
 4. **ОС:** разработано для Windows (использует WinAPI)
 
-## Пример работы
 
-### Сессия 1: Receiver
-
-```
-Binary file name: messages.bin
-Number of records: 5
-Number of senders: 2
-
-Started sender #0 with PID: 1234
-Started sender #1 with PID: 1235
-Waiting for senders to be ready...
-Sender #0 ready.
-Sender #1 ready.
-All senders are ready.
-
-Receiver command (read/exit): read
-Received: Hello from Sender 0
-
-Receiver command (read/exit): read
-Received: Test message 2
-```
-
-### Сессия 2: Sender 0
-
-```
-Sender #0 starting...
-Sender command (send/exit): send
-Message: Hello from Sender 0
-Message sent successfully
-
-Sender command (send/exit): exit
-```
-
-### Сессия 3: Sender 1
-
-```
-Sender #1 starting...
-Sender command (send/exit): send
-Message: Test message 2
-Message sent successfully
-
-Sender command (send/exit): exit
-```
 
 ## Заключение
 
