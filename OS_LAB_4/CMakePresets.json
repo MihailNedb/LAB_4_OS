@@ -1,0 +1,126 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "default",
+            "description": "Default configuration for OS_LAB_4 project",
+            "generator": "Visual Studio 17 2022",
+            "binaryDir": "${workspaceFolder}/build",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "YES",
+                "CMAKE_CXX_STANDARD": "17",
+                "CMAKE_CXX_STANDARD_REQUIRED": "ON",
+                "BUILD_TESTS": "OFF"
+            }
+        },
+        {
+            "name": "OS_LAB_4",
+            "displayName": "Visual Studio 2022 - x64",
+            "description": "Using Visual Studio 17 2022 compiler (x64 architecture)",
+            "generator": "Visual Studio 17 2022",
+            "toolset": "host=x64",
+            "architecture": "x64",
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}/out/install/${presetName}",
+                "CMAKE_C_COMPILER": "cl.exe",
+                "CMAKE_CXX_COMPILER": "cl.exe",
+                "CMAKE_CXX_STANDARD": "17",
+                "CMAKE_CXX_STANDARD_REQUIRED": "ON",
+                "BUILD_TESTS": "OFF"
+            }
+        },
+        {
+            "name": "windows-debug",
+            "displayName": "Windows Debug",
+            "description": "Debug build for Windows",
+            "generator": "Visual Studio 17 2022",
+            "toolset": "host=x64",
+            "architecture": "x64",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_CXX_STANDARD": "17",
+                "CMAKE_CXX_STANDARD_REQUIRED": "ON",
+                "BUILD_TESTS": "OFF"
+            }
+        },
+        {
+            "name": "windows-release",
+            "displayName": "Windows Release",
+            "description": "Release build for Windows",
+            "generator": "Visual Studio 17 2022",
+            "toolset": "host=x64",
+            "architecture": "x64",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release",
+                "CMAKE_CXX_STANDARD": "17",
+                "CMAKE_CXX_STANDARD_REQUIRED": "ON",
+                "BUILD_TESTS": "OFF"
+            }
+        },
+        {
+            "name": "tests-debug",
+            "displayName": "Tests Debug",
+            "description": "Debug build with tests enabled",
+            "generator": "Visual Studio 17 2022",
+            "toolset": "host=x64",
+            "architecture": "x64",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_CXX_STANDARD": "17",
+                "CMAKE_CXX_STANDARD_REQUIRED": "ON",
+                "BUILD_TESTS": "ON"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "OS_LAB_4-Debug",
+            "displayName": "Visual Studio 2022 x64 - Debug",
+            "configurePreset": "OS_LAB_4",
+            "configuration": "Debug"
+        },
+        {
+            "name": "OS_LAB_4-Release",
+            "displayName": "Visual Studio 2022 x64 - Release",
+            "configurePreset": "OS_LAB_4",
+            "configuration": "Release"
+        },
+        {
+            "name": "debug-build",
+            "displayName": "Build Debug",
+            "configurePreset": "windows-debug",
+            "configuration": "Debug"
+        },
+        {
+            "name": "release-build",
+            "displayName": "Build Release",
+            "configurePreset": "windows-release",
+            "configuration": "Release"
+        },
+        {
+            "name": "tests-build",
+            "displayName": "Build Tests",
+            "configurePreset": "tests-debug",
+            "configuration": "Debug"
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "OS_LAB_4_tests",
+            "description": "Run OS_LAB_4 tests",
+            "displayName": "OS_LAB_4 Tests",
+            "configurePreset": "tests-debug"
+        },
+        {
+            "name": "test-default",
+            "description": "Default test configuration",
+            "displayName": "Default Tests",
+            "configurePreset": "tests-debug"
+        }
+    ]
+}
