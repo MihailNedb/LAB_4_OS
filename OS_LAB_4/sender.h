@@ -9,7 +9,6 @@
 
 using namespace std;
 
-// Основные функции sender
 void runSender(string filename, int senderId);
 void handleSenderCommands(HANDLE hFile, HANDLE hMutex, HANDLE evNotFull, HANDLE evNotEmpty);
 void processSendCommand(HANDLE hFile, HANDLE hMutex, HANDLE evNotFull, HANDLE evNotEmpty);

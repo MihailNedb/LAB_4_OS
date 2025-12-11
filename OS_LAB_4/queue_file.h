@@ -8,20 +8,17 @@
 
 using namespace std;
 
-// Структура заголовка очереди
 #pragma pack(push,1)
 struct QueueHeader {
-    int capacity;       // максимальное число сообщений
-    int head;           // позиция чтения
-    int tail;           // позиция записи
-    int count;          // текущее количество сообщений
+    int capacity;       
+    int head;           
+    int tail;           
+    int count;          
 };
 #pragma pack(pop)
 
-// Константы
 const int MSG_SIZE = 20;
 
-// Функции работы с файлом очереди
 HANDLE openFile(const string& filename, bool createNew = false);
 bool initializeQueueFile(HANDLE hFile, int capacity);
 bool readQueueHeader(HANDLE hFile, QueueHeader& header);

@@ -72,7 +72,7 @@ bool readMessage(HANDLE hFile, const QueueHeader& header, int index, char* buffe
         return false;
     }
 
-    buffer[MSG_SIZE] = '\0'; // Ensure null termination
+    buffer[MSG_SIZE] = '\0'; 
     return true;
 }
 

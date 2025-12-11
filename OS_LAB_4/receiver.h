@@ -9,7 +9,6 @@
 
 using namespace std;
 
-// Основные функции receiver
 void runReceiver();
 void handleReceiverCommands(HANDLE hFile, HANDLE hMutex, HANDLE evNotEmpty, HANDLE evNotFull);
 void processReadCommand(HANDLE hFile, HANDLE hMutex, HANDLE evNotEmpty, HANDLE evNotFull);
